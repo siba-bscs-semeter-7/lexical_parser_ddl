@@ -1,8 +1,6 @@
 import './constants.dart';
 import 'AnalyzerResponse.dart';
 import 'Keywords.dart';
-import 'functions.dart';
-import 'operator.dart';
 import 'punctuation.dart';
 import 'table_column.dart';
 import 'tokanization.dart';
@@ -18,11 +16,12 @@ class Analyzer {
   AnalyzerResponse analyze(String s) {
     reset();
     List tokens = Tokanization().createTokens(s);
-    print("Tokens Here: $tokens");
+    // print("Tokens Here: $tokens");
     bool isTableIndicatorApperared = false;
     for (String element in tokens) {
       if (keyword.isKeyword(element)) {
-        if (element == keyword.TABLE) {
+        if (element.toUpperCase() == keyword.TABLE ||
+            element.toUpperCase() == keyword.ON) {
           isTableIndicatorApperared = true;
         }
         keyword.addKeyword(element);

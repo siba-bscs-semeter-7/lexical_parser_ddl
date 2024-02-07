@@ -18,6 +18,8 @@ class Keywords {
   String INDEX = "INDEX";
   String SCHEMA = "SCHEMA";
   String DATABASE = "DATABASE";
+  String DECIMAL = "DECIMAL";
+  String MODIFY = "MODIFY";
 
   final List<String> _storeKeywords = [];
 
@@ -40,6 +42,8 @@ class Keywords {
     keywords.add(INDEX);
     keywords.add(SCHEMA);
     keywords.add(DATABASE);
+    keywords.add(DECIMAL);
+    keywords.add(MODIFY);
   }
 
   bool isKeyword(String s) {

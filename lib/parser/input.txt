@@ -6,3 +6,30 @@ CREATE TABLE Employees (
     DepartmentID INT,
     CONSTRAINT FK_Department FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
 );
+
+
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    hire_date DATE,
+    salary DECIMAL(10, 2)
+);
+
+
+ALTER TABLE employees
+ADD COLUMN department_id INT;
+
+
+ALTER TABLE employees
+MODIFY COLUMN salary DECIMAL(12, 2);
+
+
+DROP TABLE employees;
+
+CREATE INDEX idx_last_name
+ON employees (last_name);
+
+
+CREATE UNIQUE INDEX idx_employee_id
+ON employees (employee_id);

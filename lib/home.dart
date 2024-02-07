@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   TextEditingController othersController = TextEditingController();
 
   double heightbwfields = 10;
-  bool textFieldEditable = false;
+  bool textFieldEditable = true;
 
   @override
   Widget build(BuildContext context) {
